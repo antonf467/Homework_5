@@ -1,142 +1,138 @@
-﻿// Задайте массив из 12 элементов, заполненный
-// случайными числами из промежутка [-9, 9]. Найдите
-// сумму отрицательных и положительных элементов массива.
-// Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6]
-// сумма положительных чисел равна 29, сумма отрицательных равна -20.
+﻿// Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, 
+// которая покажет количество чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
 
-// int [] array= new int[12];
+// int size = ReadInt("Введите размер массива: ");
+// int [] numbers = new int[size];
 
-// int sumPosNum=0;
-// int sumNegNum=0;
+// FillArrayRandomNumbers(numbers);
+// PrintArray(numbers);
+// int result = 0;
 
-// for (int i = 0; i < array.Length; i++)
+// for (int i = 0; i < numbers.Length; i++)
 // {
-// array[i] =new Random().Next(-9,10);
-// Console.Write(array[i]+" ");
-
-// if (array[i]>0)
+//     if (numbers[i] % 2 == 0)
+//     {
+//         result++;
+//     }
+// }
+// if (result % 10 == 1)
 // {
-// sumPosNum+=array[i];
+//     Console.WriteLine($"В массиве {result} четное число");
+// }
+// if (result % 10 == 2 || result % 10 == 3 || result % 10 == 4)
+// {
+//     Console.WriteLine($"В массиве {result} четных числа");
 // }
 // else
+
+//     Console.WriteLine($"В массиве {result} четных чисел");
+
+
+// void FillArrayRandomNumbers(int [] array) 
 // {
-// sumNegNum+=array[i];
-// }
-// }
-// System.Console.WriteLine();
-// Console.WriteLine($"Сумма полож. = {sumPosNum}, отриц. = {sumNegNum}");
-
-
-
-// Напишите программу замена элементов массива: положительные элементы замените на
-// соответствующие отрицательные, и наоборот.
-// [-4, -8, 8, 2] -> [4, 8, -8, -2]
-
-
-// int [] array= new int[4];
-
-// for (int i = 0; i < array.Length; i++)
-// {
-// array[i] =new Random().Next(-9,10);
-// Console.Write(array[i]+" ");
-
-// array[i] = array[i] * (-1);
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(99, 999);
+//     }
 // }
 
-// System.Console.WriteLine();
-
-// for (int j = 0; j < array.Length; j++)
+// void PrintArray(int[] array) 
 // {
-// Console.Write(array[j]+" ");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
 // }
 
 
-
-
-// Задайте массив. Напишите программу, которая
-// определяет, присутствует ли заданное число в массиве.
-// 4; массив [6, 7, 19, 345, 3] -> нет
-// -3; массив [6, 7, 19, 345, 3] -> да
-
-// System.Console.WriteLine("Введите число");
-// int num = Convert.ToInt32(Console.ReadLine());
-
-// bool isFind=false;
-
-// int [] array= new int[5];
-
-// for (int i = 0; i < array.Length; i++)
+// int ReadInt(string message) 
 // {
-// array[i] =new Random().Next(-9,19);
-// Console.Write(array[i]+" ");
+//     Console.Write(message);
+//     return Convert.ToInt32(Console.ReadLine());
+// }
 
-// if (num==array[i])
+// Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+// int size = ReadInt("Введите размер массива: ");
+// int min = ReadInt("Введите min число массива: ");
+// int max = ReadInt("Введите max число массива: ");
+// int [] numbers = new int[size];
+
+// FillArrayRandomNumbers(numbers);
+// PrintArray(numbers);
+// int result = 0;
+
+// for (int i = 0; i < numbers.Length; i++)
 // {
-// isFind=true;
+//     if (i % 2 != 0)
+//     {
+//         result += numbers[i];
+//     }
+// }
+// Console.WriteLine($"Сумма элементов нечетных = {result}");
+
+
+// void FillArrayRandomNumbers(int [] array) 
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(min, max);
+//     }
+// }
+
+// void PrintArray(int[] array) 
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int ReadInt(string message)  
+// {
+//     Console.Write(message);
+//     return Convert.ToInt32(Console.ReadLine());
+// }
+
+//  Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
+
+// Console.Write("Введите количество элементов массива: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// double[] randomArray = new double[a];
+
+// void mas(int a)
+// {
+// Random rand = new Random();
+// for (int i = 0; i < a; i++)
+// {
+// randomArray[i] = rand.NextDouble();
+// Console.Write($"{randomArray[i]:F2} ");
 // }
 
 // }
-// if (isFind==true)
+
+// double raz(double[] randomArray)
 // {
-// System.Console.WriteLine("Да");
+// double min = randomArray[0];
+// double max = randomArray[0];
+// int i = 1;
+// while (i < randomArray.Length)
+// {
+// if (max<randomArray[i])
+// max = randomArray[i];
+// if (min>randomArray[i])
+// min = randomArray[i];
+// i = i + 1;
 // }
-// else
-// {
-// System.Console.WriteLine("Нет");
-// }   
-
-
-// Задача 35: Задайте одномерный массив из 123 случайных чисел.
-// Найдите количество элементов массива, значения которых
-// лежат в отрезке [10,99].
-// Пример для массива из 5, а не 123 элементов. В своём
-// решении сделайте для 123
-// [5, 18, 123, 6, 2] -> 1
-// [1, 2, 3, 6, 2] -> 0
-// [10, 11, 12, 13, 14] -> 5
-
-// int [] array= new int[123];
-// int count=0;
-
-// for (int i = 0; i < array.Length; i++)
-// {
-// array[i] =new Random().Next(0,160);
-// Console.Write(array[i]+" ");
-
-// if (array[i]>9 && array[i]<100)
-// {
-// count++;
+// return max-min;
 // }
 
-// }
-// System.Console.WriteLine();
-// System.Console.WriteLine(count++);
+// mas(a);
+// Console.Write($"\nРазница между максимальным и минимальным элементов массива: {(randomArray)}");
 
-
-
-
-System.Console.WriteLine("Введите число");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int[] array1 = new int[num];
-int[] array2 = new int[array1.Length/2+ array1.Length % 2];
-
-for (int i = 0; i < array1.Length; i++)
-{
-array1[i] = new Random().Next(0,9);
-System.Console.Write(array1[i]+" ");
-}
-
-for (int i = 0; i < array2.Length; i++)
-{
-array2[i] =array1[i]* array1[array1.Length-1-i];
-if (array1.Length-1-i==i)
-{
-array2[i]=array1[i];
-}
-}
-System.Console.WriteLine();
-for (int i = 0; i < array2.Length; i++)
-{
-System.Console.Write(array2[i]+" ");
-}
